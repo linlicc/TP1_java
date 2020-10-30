@@ -13,7 +13,8 @@ public class Application {
 		while (executando) {
 
 			Scanner sc = new Scanner(System.in);
-			System.out.println("1 - Registrar as notas de um novo aluno:");
+			System.out.println(" ---------- CADASTRO ----------");
+			System.out.println("1 - Registrar um novo aluno:");
 			System.out.println("2 - Consultar Boletins de um aluno:");
 			System.out.println("3 - Consultar notas da turma:");
 			System.out.println("4 - Sair:");
@@ -41,32 +42,36 @@ public class Application {
 				Float nota2 = sc.nextFloat();
 				novoAluno.cadastrarNota(nota2);
 
-				System.out.println("Informe a nota 3");
-				Float nota3 = sc.nextFloat();
-				novoAluno.cadastrarNota(nota3);
-
 				turma.add(novoAluno);
 
 				break;
 
 			case (2):
+
+				System.out.println("Insira a matrícula");
+
+				int pesquisa = sc.nextInt();
+				for (Aluno aluno : turma) {
+
+					if (aluno.getMatricula() == pesquisa) {
+						aluno.calcularMedia();
+
+					}
+				}
 				break;
 
 			case (3):
+				for (Aluno aluno : turma) {
+					aluno.calcularMedia();
+
+				}
+
 				break;
 
 			case (4):
 				executando = false;
 				break;
 
-			}
-		}
-		for (Aluno aluno : turma) {
-			System.out.println(aluno.getNome());
-
-			Float notas[] = aluno.getNotas();
-			for (int i = 0; i < 2; i++) {
-				System.out.println(notas[i].toString());
 			}
 
 		}

@@ -19,14 +19,32 @@ public class Aluno {
 	}
 
 	public void cadastrarNota(Float nota) {
-		
+
 // valor inicial, final e o incrementador 
-        for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 3; i++) {
 			if (notas[i] == null) {
-                 this.notas[i] = nota; 
+				this.notas[i] = nota;
+				break;
+
 			}
 
 		}
+
+	}
+
+	public void calcularMedia() {
+		int totalDeNotas = 2;
+		Float nota1 = notas[0];
+		Float nota2 = notas[0];
+
+		Float media = (nota1 + nota2) / totalDeNotas;
+		String status = media > 7 ? "On" : "Off";
+		System.out.println(" Média do aluno: ");
+		System.out.println("Nome do aluno: " + this.nome);
+		System.out.println("AV1: " + this.notas[0]);
+		System.out.println("AV2: " + this.notas[1]);
+		System.out.println("Média final: " + media);
+		System.out.println("Status do aluno: " + status);
 
 	}
 
