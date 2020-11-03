@@ -1,5 +1,5 @@
 # Desenvolvimento-Java-20E4-21E1
-Repositório para manter os projetos da disciplina de Fundamentos da Programação
+Repositório do TP1 da disciplina de Fundamentos da Programação
 
 ## Começando
 Para executar os projetos, será necessário instalar os seguintes programas:
